@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Calculator by Eugy Enoch</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="title" content="Javascript Calculator by Eugy Enoch" />
+<meta name="description" content="A free javascript based calculator application software with source code for use by contributors, optimists and enthusiasts by Eugy Enoch" />
+<meta name="keywords" content="Free JavaScript Calculator, Free Javascript software, Free HTML5 Software, Free CSS software, Free student project" />
+<meta name="author" content="Eugy Enoch" />
+<meta name="school" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JavaScript Calculator by Eugy Enoch" />
+<meta property="og:description" content="A free javascript based calcultor application software with source code for use by contributors, optimists and enthusiasts by Eugy Enoch" />
+<meta property="og:image" content="img/calculator.png" />
+
+<link rel="shortcut icon" href="img/calculator.png" />
+<link rel="stylesheet" href="css/calculator.css" />
+
+<script>
+window.onload=function(){
+	var timer=new Date();
+	var timers=timer.getHours()+" : "+timer.getMinutes();
+	document.getElementById("headDisplay").value=timers;
+}
+</script>
+</head>
+
+<body>
+<section class="calc-section">
+<form name="calculator">
+<table>
+<tr id="headTR">
+<td id="headTD">
+<input type="text" name="headDisplay" id="headDisplay" disabled />
+</td>
+<!--Activate or delete/create own off/on buttons-->
+<td id="headTD">
+<input class="toggle-btn" type="button" name="off" value="&#9864;SLEEP" onclick="calc.off();" />
+</td>
+<td id="headTD">
+<input class="toggle-btn" type="button" name="on" value="&#9788;WAKE" onclick="calc.on();" />
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td colspan="6" id="mainDisplay"><input type="text" name="display" id="display" disabled /></td>
+</tr>
+<tr>
+<td><input class="operator-btn" type="button" name="shift" value="Shift" onclick="" /></td>
+<td><input class="operator-btn" type="button" name="copyright" value="&copy;" onclick="calc.copy();" /></td>
+<td><input class="operator-btn" type="button" name="clear" value="C" onclick="calc.cls();" /></td>
+<td><input class="operator-btn" type="button" name="clear" value="CE" onclick="calc.back();" /></td>
+<td><input class="operator-btn" type="button" name="rad" value="r" onclick="calc.rad();" /></td>
+<td><input class="operator-btn" type="button" name="random" value="Rand" onclick="calc.rand();" /></td>
+</tr>
+
+<tr>
+<td><input class="operator-btn" type="button" name="increment" value="X++" onclick="calc.increase();" /></td>
+<td><input class="operator-btn" type="button" name="decrement" value="X--" onclick="calc.decrease();" /></td>
+<td><input class="operator-btn" type="button" name="not" value="&notin;" onclick="calculator.display.value += '!'" /></td>
+<td><input class="operator-btn" type="button" name="log2" value="Log&#x2082" onclick="calc.log2();" /></td>
+<td><input class="operator-btn" type="button" name="log10" value="Log10" onclick="calc.log10();" /></td>
+<td><input class="operator-btn" type="button" name="absolute" value="Abs" onclick="calc.abs();" /></td>
+</tr>
+
+<tr>
+<td><input class="operator-btn" type="button" name="pow2" value="X&#xb2;" onclick="calc.raise2();" /></td>
+<td><input class="operator-btn" type="button" name="cube" value="X&#xb3;" onclick="calc.raise3();" /></td>
+<td><input class="operator-btn" type="button" name="raise_power" value="^" onclick="calculator.display.value += '**' " /></td>
+<td><input class="operator-btn" type="button" name="min" value="Max" onclick="calc.max();" /></td>
+<td><input class="operator-btn" type="button" name="min" value="Min" onclick="calc.min();" /></td>
+<td><input class="operator-btn" type="button" name="round" value="Round" onclick="calc.round();" /></td>
+</tr>
+
+<tr>
+<td><input class="operator-btn" type="button" name="left-paranthesis" value="(" onclick="calculator.display.value += '(' " /></td>
+<td><input class="operator-btn" type="button" name="right-paranthesis" value=")" onclick="calculator.display.value += ')' " /></td>
+<td><input class="operator-btn" type="button" name="pi" value="&pi;" onclick="calc.pi();" /></td>
+<td><input class="operator-btn" type="button" name="sine" value="Sin" onclick="calc.sin();" /></td>
+<td><input class="operator-btn" type="button" name="cosine" value="Cos" onclick="calc.cos();" /></td>
+<td><input class="operator-btn" type="button" name="tangent" value="Tan" onclick="calc.tan();" /></td>
+</tr>
+
+<tr>
+<td><input class="operator-btn" type="button" name="lessThan" value="&lt;" onclick="calculator.display.value += '<' " /></td>
+<td><input class="operator-btn" type="button" name="greaterThan" value="&gt;" onclick="calculator.display.value += '>' " /></td>
+<td><input class="operator-btn" type="button" name="trunc" value="Trunc" onclick="calc.trunc();" /></td>
+<td><input class="operator-btn" type="button" name="asine" value="aSin" onclick="calc.asin();" /></td>
+<td><input class="operator-btn" type="button" name="acosine" value="aCos" onclick="calc.acos();" /></td>
+<td><input class="operator-btn" type="button" name="atangent" value="aTan" onclick="calc.atan();" /></td>
+</tr>
+
+<tr>
+<td><input class="operator-btn" type="button" name="sqrt" value="&radic;" onclick="calc.sqr();" /></td>
+<td><input class="operator-btn" type="button" name="qrMatrix" value="&#8731;" onclick="calc.cbrt();" /></td>
+<td><input class="operator-btn" type="button" name="percent" value="%" onclick="calculator.display.value += '%' " /></td>
+<td><input class="operator-btn" type="button" name="comma" value="," onclick="calculator.display.value += ',' " /></td>
+<td><input class="operator-btn" type="button" name="point" value="." onclick="calculator.display.value += '.' " /></td>
+<td><input class="operator-btn" type="button" name="plus" value="+" onclick="calculator.display.value += '+'" /></td>
+</tr>
+
+<tr>
+<td><input class="btn-normal" type="button" name="zero" value="0" onclick="calculator.display.value += '0' " /></td>
+<td><input class="btn-normal" type="button" name="one" value="1" onclick="calculator.display.value += '1' " /></td>
+<td><input class="btn-normal" type="button" name="two" value="2" onclick="calculator.display.value += '2' " /></td>
+<td><input class="btn-normal" type="button" name="three" value="3" onclick="calculator.display.value += '3' " /></td>
+<td><input class="btn-normal" type="button" name="half" value="&half;" onclick="calculator.display.value += '1/2' " /></td>
+<td><input class="operator-btn" type="button" name="divide" value="&divide;" onclick="calculator.display.value += '/'" /></td>
+</tr>
+
+<tr>
+<td><input class="btn-normal" type="button" name="four" value="4" onclick="calculator.display.value += '4' " /></td>
+<td><input class="btn-normal" type="button" name="five" value="5" onclick="calculator.display.value += '5' " /></td>
+<td><input class="btn-normal" type="button" name="six" value="6" onclick="calculator.display.value += '6' " /></td>
+<td><input class="btn-normal" type="button" name="seven" value="7" onclick="calculator.display.value += '7' " /></td>
+<td><input class="btn-normal" type="button" name="oneThird" value="&frac13;" onclick="calculator.display.value += '1/3' " /></td>
+<td><input class="operator-btn" type="button" name="minus" value="-" onclick="calculator.display.value += '-'" /></td>
+</tr>
+
+<tr>
+<td><input class="btn-normal" type="button" name="eight" value="8" onclick="calculator.display.value += '8' " /></td>
+<td><input class="btn-normal" type="button" name="nine" value="9" onclick="calculator.display.value += 9 " /></td>
+<td><input class="btn-normal" type="button" name="aaa" value="A" onclick="calculator.display.value += 'A' " /></td>
+<td><input class="btn-normal" type="button" name="bbb" value="B" onclick="calculator.display.value += 'B' " /></td>
+<td><input class="btn-normal" type="button" name="oneFourth" value="&frac14;" onclick="calculator.display.value += '1/4' " /></td>
+<td><input class="operator-btn" type="button" name="multiply" value="x" onclick="calculator.display.value += '*'" /></td>
+</tr>
+
+<tr>
+<td><input class="btn-normal" type="button" name="ccc" value="C" onclick="calculator.display.value += 'C' " /></td>
+<td><input class="btn-normal" type="button" name="ddd" value="D" onclick="calculator.display.value += 'D' " /></td>
+<td><input class="btn-normal" type="button" name="eee" value="E" onclick="calculator.display.value += 'E' " /></td>
+<td><input class="btn-normal" type="button" name="fff" value="F" onclick="calculator.display.value += 'F' " /></td>
+<td><input class="btn-normal" type="button" name="oneFifth" value="&frac15;" onclick="calculator.display.value += '1/5' " /></td>
+<td><input class="operator-btn" type="button" name="equals" value="=" onclick="calc.equal();" /></td>
+</tr>
+</table>
+</form>
+</section>
+<script src="js/calculator.js"></script>
+</body>
+
+</html>
