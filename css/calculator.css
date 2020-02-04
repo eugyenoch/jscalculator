@@ -28,20 +28,20 @@ body,html{
 /*Declare new fonts*/
 @font-face{
 	font-family:calculator;
-	src:url(../font/LOOPY___.TTF);
+	src:url(LOOPY___.TTF);
 	font-weight:bold;
 }
 
 @font-face{
 		font-family:calculatorItalic;
-		src:url(../font/LOOPY_IT.TTF);
+		src:url(LOOPY_IT.TTF);
 		font-weight:italics;
 }
 
 /*Main CSS*/
 /*Dealing with the body element*/
 body,html{
-	background-image:url('../img/download.png');
+	background-image:url('download.png');
 	background-position:center center;
 	background-size:cover;
 	background-repeat:no-repeat;
