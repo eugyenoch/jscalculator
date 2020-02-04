@@ -1,0 +1,3 @@
+there are two contained images in this folder,
+1. The calculator.png used as a favicon. 
+2. The download.png used as a background image.
