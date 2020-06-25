@@ -1,5 +1,5 @@
 # jscalculator
-#Browser dependent Javascript calculator done with students of APTECH
+#Browser dependent Javascript calculator done with students
  
 The Custom font used in this document('loopy ==> LOOPY___' and 'loopy italic ==> LOOPY_IT' respectively) has been provided by Loopy and downloaded from the internet for use in the software.
 
