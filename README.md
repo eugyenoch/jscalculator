@@ -1,5 +1,6 @@
 # jscalculator
 #Browser dependent Javascript calculator done with students
+#Originally built for the Mozilla systems
  
 The Custom font used in this document('loopy ==> LOOPY___' and 'loopy italic ==> LOOPY_IT' respectively) has been provided by Loopy and downloaded from the internet for use in the software.
 
